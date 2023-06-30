@@ -121,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelectorAll('.dl').forEach(dl => dl.classList.add('hidden'));
 	if (typeof InstallTrigger !== 'undefined') $download_firefox.classList.remove('hidden');
 	else if (navigator.userAgent.indexOf("Edg") != -1) $download_edge.classList.remove('hidden');
+	else if (navigator.vendor && navigator.vendor.indexOf('Apple') > -1) $download_safari.classList.remove('hidden');
 	else $download_chrome.classList.remove('hidden');
 	$show_all.addEventListener('click', e => {
 		e.preventDefault();
@@ -163,6 +164,14 @@ document.addEventListener('DOMContentLoaded', () => {
 					<li>Toggle <em>Developer mode</em> on
 					<li>Drag the <code>mrbeastify-1.0.zip</code> file into Edge
 				</ul>
+			</div>
+		</div>
+		<div class="dl" id="download-safari">
+			<div class="installation-instructions">
+				<h3>What about Safari?</h3>
+				<p>Unfortunately, extension support in Safari is not very good at the moment. Extensions have to be distributed as a macOS app through the App Store, which involves a lot of additional work and paying Apple 99€ annually, which I don't really want to do.</p>
+				<p>This is also the case for iOS.</p>
+				<p>If you are currently enrolled in the Apple Developer Program and would like to help publishing this extension, please <a href="https://github.com/mrbeastify/mrbeastify/issues/new">reach out to me on GitHub</a>.</p>
 			</div>
 		</div>
 		<a href="/" id="show-all">Show all options</a>
