@@ -122,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (typeof InstallTrigger !== 'undefined') $download_firefox.classList.remove('hidden');
 	else if (navigator.userAgent.indexOf("Edg") != -1) $download_edge.classList.remove('hidden');
 	else if (navigator.vendor && navigator.vendor.indexOf('Apple') > -1) $download_safari.classList.remove('hidden');
+	else if (navigator.userAgent.match(/android/i)) $download_android.classList.remove('hidden');
 	else $download_chrome.classList.remove('hidden');
 	$show_all.addEventListener('click', e => {
 		e.preventDefault();
@@ -172,6 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
 				<p>Unfortunately, extension support in Safari is not very good at the moment. Extensions have to be distributed as a macOS app through the App Store, which involves a lot of additional work and paying Apple 99€ annually, which I don't really want to do.</p>
 				<p>This is also the case for iOS.</p>
 				<p>If you are currently enrolled in the Apple Developer Program and would like to help publishing this extension, please <a href="https://github.com/mrbeastify/mrbeastify/issues/new">reach out to me on GitHub</a>.</p>
+			</div>
+		</div>
+		<div class="dl" id="download-android">
+			<div class="installation-instructions">
+				<h3>MrBeastify on Android</h3>
+				<p>Right now, the only way to get the extension on Android is through <strong>Firefox for Android</strong>, which supports the Firefox Addon.</p>
 			</div>
 		</div>
 		<a href="/" id="show-all">Show all options</a>
